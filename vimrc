@@ -78,3 +78,4 @@ set ts=2  "(注：ts是tabstop的缩写，设TAB宽4个空格)
 set expandtab
 set cursorline
 set encoding=utf8 fileencodings=ucs-bom,utf-8,cp936
+

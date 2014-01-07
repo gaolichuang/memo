@@ -107,3 +107,4 @@ PS1="\[\e[34;1m\]\u@`/sbin/ifconfig eth0|grep 'inet '|awk -F'[: ]+' '{print $4}'
 #export CPUPROFILE=/tmp/profile
 
 alias rmdotsvn="find . -name \".svn\" |xargs rm -rf"
+alias dev='ssh 127.0.0.1'
