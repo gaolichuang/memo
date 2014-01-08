@@ -52,3 +52,9 @@ $ git checkout -b experimental origin/experimental
 $ git branch
     master
   * experimental
+# list all branch include remote branch
+ git branch -a
+# delete remote branch
+git push origin --delete <branchName>
+# delete tag
+git push origin --delete tag <tagname>
