@@ -1,6 +1,6 @@
 #!/bin/bash
 
-usage="usage: run_controller.sh (status) "
+usage="usage: run_controller.sh (status|ksm|clearlog) "
 
 if [ $# -lt 1 ]; then
   echo $usage
@@ -51,11 +51,27 @@ virsh version
 ### set secret key or not
 virsh secret-list
 }
+clearlog() {
+for f in `ls /var/log/nova/*.log` ;do cat /dev/null > $f ;done
+}
 ceph_secertkey_reset() {
  echo 
 }
+ksm_save() {
+#### ksm run or not
+#ps aux|grep ksmd |grep -v grep
+### ksm save memory 
+echo "KSM saved; $(($(cat /sys/kernel/mm/ksm/pages_sharing) * $(getconf PAGESIZE) / 1024 /1024))MB"
+}
+ksm_check() {
+### qemu use memory statistic
+ps aux|grep qemu-system-x86_64|grep instance-|awk '{ sum+=$6 }END{ sum /=1000 ;print "There are "NR" qemu-system-x86_64 processes, Use memory "sum " MB"}'
+ksm_save
+}
 if [ $operation == "status" ];then
   status_check
-#elif [ $operation == "binary_rollback" ];then
-#  control_binary_rollback
+elif [ $operation == "clearlog" ];then
+  clearlog
+elif [ $operation == "ksm" ];then
+  ksm_check
 fi

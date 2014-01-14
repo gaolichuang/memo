@@ -2,12 +2,13 @@
 
 SHELL_NAME=update_config.sh
 CONF_DIR=./nova
-HOST_LIST=conf/nova-compute.host
+#HOST_LIST=conf/nova-compute.host
+HOST_LIST=conf/nova-controller.host
 USER=cloud
 D_USER=root
 CONTROLLER=script/run_controller.sh
 CONTROLLER_CMD=run_controller.sh
-PASS_WORD=XXXXXXXX
+PASS_WORD=XXXXXXX
 
 usage()
 {
