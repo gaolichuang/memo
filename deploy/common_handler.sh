@@ -1,6 +1,5 @@
 #!/bin/bash
 
-SHELL_NAME=news_petabyte_handler.sh
 HOST_LIST=conf/nova-compute.host
 #HOST_LIST=conf/nova-controller.host
 CONTROLLER=script/run_controller.sh
@@ -12,7 +11,7 @@ D_USER=root
 usage()
 {
   echo "Usage: $SHELL_NAME [start|stop|clearlog|check_bin|check_mem|check_disk|status] [ntp|nova-compute|nova-compute-all|nova-scheduler|nova-api]"
-  echo "Usage: $SHELL_NAME [check_bin|check_mem|check_disk|status|ksm]"
+  echo "Usage: $SHELL_NAME [check_bin|check_mem|check_disk|status|ksm|date]"
   exit
 }
 
@@ -65,6 +64,8 @@ elif [ "$1" = "uptime" ]; then
   multiexec -f $HOST_LIST -u $USER "uptime"
 elif [ "$1" = "uname" ]; then
   multiexec -f $HOST_LIST -u $USER "uname -a"
+elif [ "$1" = "date" ]; then
+  multiexec -f $HOST_LIST -u $USER "date"
 else
   usage
 fi
