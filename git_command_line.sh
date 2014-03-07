@@ -9,6 +9,9 @@ git branch dev
 # switch to dev branch
 git branch dev
 
+#删除本地分支
+git branch -d dev
+
 # merge from other branch to current branch
 # example: now at master, merge from dev
 git merge dev
@@ -54,7 +57,7 @@ $ git branch
   * experimental
 # list all branch include remote branch
  git branch -a
-# delete remote branch
+# delete remote branch   删除远端分支
 git push origin --delete <branchName>
 # delete tag
 git push origin --delete tag <tagname>
