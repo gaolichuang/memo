@@ -61,3 +61,14 @@ $ git branch
 git push origin --delete <branchName>
 # delete tag
 git push origin --delete tag <tagname>
+
+# 拿到nova代码
+git clone https://github.com/openstack/nova.git
+git branch -a
+#创建remote地址cc，这个可以在一个clone出来的git库进行，使得一个git库关联多个远端
+git remote add  cc gitolite@git.localhost:nova.git
+# 创建一个cc/havana分支
+ git checkout   remotes/origin/stable/havana -b cc/havana
+# 把这个分支推到cc远端
+ git push cc  cc/havana
+# 
