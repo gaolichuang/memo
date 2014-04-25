@@ -79,3 +79,5 @@ set expandtab
 set cursorline
 set encoding=utf8 fileencodings=ucs-bom,utf-8,cp936
 
+"设置在哪些模式下使用鼠标功能，mouse=a 表示所有模式 
+set mouse=a
