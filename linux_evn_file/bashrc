@@ -108,3 +108,7 @@ PS1="\[\e[34;1m\]\u@`/sbin/ifconfig eth0|grep 'inet '|awk -F'[: ]+' '{print $4}'
 
 alias rmdotsvn="find . -name \".svn\" |xargs rm -rf"
 alias dev='ssh 127.0.0.1'
+
+# install sudo apt-get install tofrodos
+alias unix2dos=todos
+alias dos2unix=fromdos
