@@ -72,3 +72,5 @@ git remote add  cc gitolite@git.localhost:nova.git
 # 把这个分支推到cc远端
  git push cc  cc/havana
 # 
+
+git pull origin master
