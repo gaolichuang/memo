@@ -73,4 +73,5 @@ git remote add  cc gitolite@git.localhost:nova.git
  git push cc  cc/havana
 # 
 
+#将远端的拉倒本地， 相当于svn up
 git pull origin master
