@@ -75,3 +75,11 @@ git remote add  cc gitolite@git.localhost:nova.git
 
 #将远端的拉倒本地， 相当于svn up
 git pull origin master
+
+# 如何查看本地代码和远端是否一致   相当于svn st
+:~/workspace/github/memo$ git branch -a # 看下有哪些分支
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/dev
+  remotes/origin/master
+:~/workspace/github/memo$ git diff master  origin/master   # 比较本分支和远端分支的区别
