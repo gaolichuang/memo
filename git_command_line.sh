@@ -83,3 +83,17 @@ git pull origin master
   remotes/origin/dev
   remotes/origin/master
 :~/workspace/github/memo$ git diff master  origin/master   # 比较本分支和远端分支的区别
+
+
+### git 初始化
+git config --global user.name "gaolichuang"
+git config --global user.email "lichuang.gao@chinacache.com"
+mkdir XXX
+cd XXX
+git init
+git remote add origin git@gitxxx.com:root/XXX.git
+
+touch README.md
+git add README.md
+git commit -m "first commit"
+git push -u origin master
