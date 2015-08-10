@@ -97,3 +97,8 @@ touch README.md
 git add README.md
 git commit -m "first commit"
 git push -u origin master
+
+
+
+####  modify remote url
+git remote set-url origin git@192.168.20.181:ccos/neutron.git 
