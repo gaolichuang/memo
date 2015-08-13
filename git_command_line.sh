@@ -102,3 +102,7 @@ git push -u origin master
 
 ####  modify remote url
 git remote set-url origin git@192.168.20.181:ccos/neutron.git 
+
+
+### Git ignore file mode (chmod) changes?
+git config core.fileMode false
