@@ -109,3 +109,9 @@ git config core.fileMode false
 
 #### alias
 git config --global alias.st status
+
+
+#将某个文件的历史版本 checkout 到工作区
+git checkout <sha1-of-a-commit> </path/to/your/file>
+#有时候你需要将某个文件的历史版本 checkout 出来，并以一个新的名字保存。这时候可以这么做：
+git checkout <sha1-of-a-commit>:</path/to/your/file> </new/name/of/the/file>
