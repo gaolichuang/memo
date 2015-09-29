@@ -115,3 +115,16 @@ git config --global alias.st status
 git checkout <sha1-of-a-commit> </path/to/your/file>
 #有时候你需要将某个文件的历史版本 checkout 出来，并以一个新的名字保存。这时候可以这么做：
 git checkout <sha1-of-a-commit>:</path/to/your/file> </new/name/of/the/file>
+
+
+# switch from github to gitlab
+git clone --mirror git@github.com:gaolichuang/neutron-fwaas.git
+cd neutron-fwaas.git/
+# add gitlab address
+git remote add gitlab ssh://git@XX.XX.XX.XX:2222/ccos/neutron-fwaas.git
+git push -f --tags gitlab refs/heads/*:refs/heads/*
+
+# 创建分支，以kilo开始开发， 分支dev
+git clone ssh://git@XX.XX.XX.XX:2222/ccos/neutron-fwaas.git
+git checkout -b dev origin/stable/kilo
+git push origin dev
