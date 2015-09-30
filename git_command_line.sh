@@ -128,3 +128,10 @@ git push -f --tags gitlab refs/heads/*:refs/heads/*
 git clone ssh://git@XX.XX.XX.XX:2222/ccos/neutron-fwaas.git
 git checkout -b dev origin/stable/kilo
 git push origin dev
+
+
+# git add 后撤销
+git add a.txt
+git add b.txt
+## 撤销b.txt
+git reset HEAD b.txt
