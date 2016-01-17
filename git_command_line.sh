@@ -71,7 +71,12 @@ git remote add  cc gitolite@git.localhost:nova.git
  git checkout   remotes/origin/stable/havana -b cc/havana
 # 把这个分支推到cc远端
  git push cc  cc/havana
-# 
+
+# git create remote branch dev
+git checkout -b dev
+git add XXX
+git commit XXX
+git push origin dev # then will create remotes/origin/dev
 
 #将远端的拉倒本地， 相当于svn up
 git pull origin master
