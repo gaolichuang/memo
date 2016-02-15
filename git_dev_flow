@@ -1,7 +1,7 @@
 
 Recommended Branching Workflow
 The following is a developer workflow recommended by Builder Tools - this workflow assumes you are on your developer box: 
-	1.	Clone the Git repository for the package that you are working on, and add the package to your workspace. Using SDETools, you can achieve both with one command: brazil ws --use --package MyPackage
+	1.	Clone the Git repository for the package that you are working on, and add the package to your workspace.
 	2.	Create local branches from the mainline branch, and develop on the local branches. Make sure to give your branches descriptive names so that you can easily identify what feature you are working on. For example: git checkout -b fix-memory-leak origin/mainline
 	3.	Make a commit in your local repository. We recommend you make lots of small commits - you don't have to limit yourself to one commit.
 	4.	When your code is ready:
@@ -14,12 +14,11 @@ The following is a developer workflow recommended by Builder Tools - this workfl
 	7.	Before pushing, ensure your local branch is up to date with remote mainline
 	◦	git pull --rebase origin mainline
 	◦	Resolve any conflicts
-	8.	Push your changes to the remote server. If your change involves multiple packages, use brazil workspace push. 
-	9.	Pipelines will test your code with whatever automated test suites you have specified. For more information about Pipelines, see the Pipelines wiki.
+	8.	Push your changes to the remote server.  
 	10.	If you need to merge your changes back into local mainline (or other target branch):
-	1.	git checkout mainline (or other branch to merge into)
-	2.	git pull --rebase origin mainline (to update mainline with origin/mainline)
-	3.	git merge SourceBranchName (from above) 
+		1.	git checkout mainline (or other branch to merge into)
+		2.	git pull --rebase origin mainline (to update mainline with origin/mainline)
+		3.	git merge SourceBranchName (from above) 
 
 
 
