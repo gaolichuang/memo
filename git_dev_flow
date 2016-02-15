@@ -1,0 +1,61 @@
+
+Recommended Branching Workflow
+The following is a developer workflow recommended by Builder Tools - this workflow assumes you are on your developer box: 
+	1.	Clone the Git repository for the package that you are working on, and add the package to your workspace. Using SDETools, you can achieve both with one command: brazil ws --use --package MyPackage
+	2.	Create local branches from the mainline branch, and develop on the local branches. Make sure to give your branches descriptive names so that you can easily identify what feature you are working on. For example: git checkout -b fix-memory-leak origin/mainline
+	3.	Make a commit in your local repository. We recommend you make lots of small commits - you don't have to limit yourself to one commit.
+	4.	When your code is ready:
+	◦	Run the git pull --rebase command. Git does a fetch to bring other people's commits to your local box, then replays your changes as if they were made after these commits.
+	◦	Submit a code review.
+	5.	Make more local commits to address CR comments. After you get a 'Ship It!', you're ready to push your change to remote repository.
+	6.	[Optional but recommended] Consolidate multiple local commits to a single one. This ensures a 1:1 mapping between CRs and commits.
+	◦	Run git rebase -i command.
+	◦	'pick' the commit you want and ‘fixup’ the others. Verify using git log that there is only one commit 
+	7.	Before pushing, ensure your local branch is up to date with remote mainline
+	◦	git pull --rebase origin mainline
+	◦	Resolve any conflicts
+	8.	Push your changes to the remote server. If your change involves multiple packages, use brazil workspace push. 
+	9.	Pipelines will test your code with whatever automated test suites you have specified. For more information about Pipelines, see the Pipelines wiki.
+	10.	If you need to merge your changes back into local mainline (or other target branch):
+	1.	git checkout mainline (or other branch to merge into)
+	2.	git pull --rebase origin mainline (to update mainline with origin/mainline)
+	3.	git merge SourceBranchName (from above) 
+
+
+
+
+
+
+1. use local feature branch to develop
+
+git checkout -b <dev> mainline
+#switch
+git checkout mainline
+git checkout dev
+
+2. make change, stage, commit change on local feature branch
+
+3. pull request
+post-review -t <package1> -t <package> -r <reviewid> --pull-request --parent mainline
+
+4.merge multi commit to one
+git rebase -i HEAD~4  # maybe merge last four commit
+# edit documents and modify pick to squash or other. then save
+# remove unused comments
+
+then it is only one commit.
+
+5.Merge mainline modify to dev branch
+git checkout dev
+git rebase mainline  # merge mainline to dev
+# if conflict:
+a.fix confict
+b.git add <Conflict file>
+c.git rebase --continue
+
+＝＝＝＝flow
+1.create local branch
+2.code change & commit & review
+3.merge mainline to local branch & resolve conflict
+4.combine local branch multi commit to one
+5.merge local branch to mainline
