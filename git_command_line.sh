@@ -61,6 +61,8 @@ $ git branch
 git push origin --delete <branchName>
 # delete tag
 git push origin --delete tag <tagname>
+# delete local branch
+git branch -D <local-branch-name>
 
 # 拿到nova代码
 git clone https://github.com/openstack/nova.git
