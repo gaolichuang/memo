@@ -142,3 +142,15 @@ git add a.txt
 git add b.txt
 ## 撤销b.txt
 git reset HEAD b.txt
+
+
+## 远程分支和本地分支不同名字， 如何push上去
+# 本地分支叫dev， 远程分支叫develop
+
+➜ git:(dev) >git push origin  HEAD:develop
+Total 0 (delta 0), reused 0 (delta 0)
+To git@github.com:xxx/ts.git
+   9a30122..e183800  HEAD -> develop
+➜ git:(dev) >git branch
+* dev
+  master
