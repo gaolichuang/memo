@@ -154,3 +154,6 @@ To git@github.com:xxx/ts.git
 ➜ git:(dev) >git branch
 * dev
   master
+
+## 远程分支删除，如何同步到本地。。。
+git fetch --prune
