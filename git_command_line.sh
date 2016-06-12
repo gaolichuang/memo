@@ -157,3 +157,15 @@ To git@github.com:xxx/ts.git
 
 ## 远程分支删除，如何同步到本地。。。
 git fetch --prune
+
+
+#### tag  clone指定tag名称
+git checkout tags/<tag_name>
+### 创建tag  后边跟commitID
+➜ git:(master) ✗ >git tag mytag  16a6203e6c3f5e72f33d54b40ac0b0974129b8a1
+➜ git:(master) ✗ >git tag
+mytag
+➜ git:(master) ✗ >git push origin mytag
+Total 0 (delta 0), reused 0 (delta 0)
+To git@github.com:xxx/ddns.git
+ * [new tag]         mytag -> mytag
