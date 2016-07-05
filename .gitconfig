@@ -1,0 +1,16 @@
+[alias]
+	st = status
+	ci = commit
+	last = log -1
+	br = branch
+
+	# Unstage any files that have been added to the staging area
+	unstage = reset HEAD
+	# Get the current branch name (not so useful in itself, but used in
+	# other aliases)
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	# Push the current branch to the remote "origin", and set it to track
+	# the upstream branch
+	publish = "!git push -u origin $(git branch-name)"
+	update = "!git pull origin $(git branch-name)"
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
