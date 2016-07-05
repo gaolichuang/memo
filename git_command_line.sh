@@ -169,3 +169,7 @@ mytag
 Total 0 (delta 0), reused 0 (delta 0)
 To git@github.com:xxx/ddns.git
  * [new tag]         mytag -> mytag
+
+
+##### git 查看文件的每一行都是谁写的
+git blame  <file>
