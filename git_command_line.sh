@@ -173,3 +173,15 @@ To git@github.com:xxx/ddns.git
 
 ##### git 查看文件的每一行都是谁写的
 git blame  <file>
+
+####### git tag
+# create a tag
+git tag -a v1.0 -m "1.0 code finish"
+# delete a tag
+git tag -d v1.0
+# list tags.
+git tag
+# show tag commit
+git show v1.0
+# update to remote
+git push origin master --tag
