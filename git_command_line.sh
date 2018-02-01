@@ -185,3 +185,7 @@ git tag
 git show v1.0
 # update to remote
 git push origin master --tag
+
+
+# 修改上一次的commit 信息
+git commit --amend
